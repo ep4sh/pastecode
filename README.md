@@ -5,7 +5,7 @@ Feel free to checkout templates for details. K8s friendly.
 
 
 ## Deployment
-Please checkout my home page for actual deployment of the service.
+Please checkout [my home page](https://paste.ep4sh.ru) for actual deployment of the service.
 
 
 ## Makefile
