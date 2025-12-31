@@ -1,0 +1,27 @@
+.menu {
+background-color: #ebedf0;
+color: black;
+}
+
+.menu a:hover {
+text-decoration:  none;
+}
+
+.ico {
+width: 5em;
+height: 5em;
+}
+
+.ico2 {
+width: 3.3em;
+height: 3.3em;
+}
+
+.head_img {
+width: 20ch;
+height: 20ch;
+}
+
+.index-small {
+font-size: 0.7em;
+}

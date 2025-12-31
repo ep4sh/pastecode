@@ -1,0 +1,44 @@
+.menu {
+background-color: #ebedf0;
+color: black;
+margin-y: 0;
+padding-y: 0;
+}
+
+.menu a:hover {
+text-decoration:  none;
+}
+
+.ico {
+width: 100%;
+height: 100%;
+}
+
+.ico2 {
+width: 80%;
+height: 80%;
+}
+
+.head_img {
+width: 20ch;
+height: 20ch;
+}
+
+.index-small {
+font-size: 0.7em;
+}
+
+.bd-placeholder-img {
+font-size: 1.125rem;
+text-anchor: middle;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+@media (min-width: 768px) {
+.bd-placeholder-img-lg {
+  font-size: 3.5rem;
+}
+}

@@ -1,0 +1,16 @@
+{{ define "content" }}
+    <div class="py-5 container">
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">@</span>
+            <input type="text" class="form-control" id="username" value="{{ .Username }}" readonly>
+            <input type="text" class="form-control" id="createdAt" value="{{ .CreatedAt }}" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="code"></label>
+            <textarea class="form-control" id="code" rows="30" readonly>{{ .Code }}</textarea>
+        </div>
+        <a href="/">
+          <button type="button" class="btn btn-outline-info">back</button>
+        </a>
+    </div>
+{{ end }}
