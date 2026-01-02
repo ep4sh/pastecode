@@ -3,11 +3,16 @@
 
     <div class="py-0 container text-center">
       <h1>Pastecodes</h1>
-      <a class="btn btn-lg btn-outline-success" href="/add">+</a>
+      <a class="btn btn-lg btn-outline-success" href="/add"
+         hx-get="/add"
+         hx-target="#result"
+         hx-swap="innerHTML settle:500ms">
+        +
+      </a>
     </div>
 
     <div class="py-5 container">
-      <div class="row">
+      <div class="row" id="result">
         {{ range . }}
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">

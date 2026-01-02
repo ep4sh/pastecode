@@ -39,11 +39,7 @@ func Index(app *app.Application) http.HandlerFunc {
 func Add(app *app.Application) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == "GET" {
-			tpl, err := template.ParseFiles("templates/base.html",
-				"templates/head.html",
-				"templates/topmenu.html",
-				"templates/footer.html",
-				"templates/add.html")
+			tpl, err := template.ParseFiles("templates/add.html")
 			if err != nil {
 				log.Printf("error parsing template files: %s", err)
 				w.WriteHeader(http.StatusInternalServerError)

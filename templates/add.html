@@ -1,14 +1,6 @@
-{{ define "content" }}
-  <div class="py-5 album h-100 bg-light">
-
-    <div class="py-0 container text-center">
-      <h1>Pastecodes</h1>
-      <a class="btn btn-lg btn-outline-success" href="/add">+</a>
-    </div>
-
     <div class="py-5 container">
       <div class="py-5 container">
-        <form class="form-floating" action="" method="POST">
+        <form class="form-floating" action="/add" method="POST">
           <div class="input-group flex-nowrap">
               <span class="input-group-text" id="addon-wrapping">@</span>
               <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
@@ -21,5 +13,3 @@
         </form>
       </div>
     </div>
-  </div>
-{{ end }}

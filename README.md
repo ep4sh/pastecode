@@ -1,7 +1,7 @@
 ## Description
 ![pastecode](https://ep4sh.ru/static/curly.png)  
 Pastecode manages pastecodes - your small text snippets. Just a extermely simple alternative to pastebin (dislike its UI).
-Feel free to checkout templates for details. K8s friendly.
+K8s friendly. htmx
 
 
 ## Deployment
