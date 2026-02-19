@@ -154,3 +154,16 @@ func LoggingMiddleware(app *app.Application, next http.Handler) http.Handler {
 			)
 		})
 }
+
+// SecurityHeadersMiddleware wraps every request with security headers.
+func SecurityHeadersMiddleware(next http.Handler) http.Handler {
+	return http.HandlerFunc(
+		func(w http.ResponseWriter, r *http.Request) {
+			w.Header().Set("X-Content-Type-Options", "nosniff")
+			w.Header().Set("Referrer-Policy", "strict-origin-when-cross-origin")
+			w.Header().Set("Strict-Transport-Security", "max-age=2678400; includeSubDomains")
+			w.Header().Set("Feature-Policy", "self")
+			w.Header().Set("X-Frame-Options", "DENY")
+			next.ServeHTTP(w, r)
+		})
+}

@@ -23,9 +23,11 @@ func main() {
 	backendApp := app.NewApp()
 
 	mux := http.NewServeMux()
+	secureHandler := handlers.SecurityHeadersMiddleware(mux)
+	handler := handlers.LoggingMiddleware(backendApp, secureHandler)
 	server := &http.Server{
 		Addr:         backendApp.WebserverConf.Addr(),
-		Handler:      handlers.LoggingMiddleware(backendApp, mux),
+		Handler:      handler,
 		ErrorLog:     zap.NewStdLog(backendApp.Sugar.Desugar()),
 		ReadTimeout:  readTimeout,
 		WriteTimeout: writeTimeout,
