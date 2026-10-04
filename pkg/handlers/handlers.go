@@ -147,12 +147,15 @@ func LoggingMiddleware(app *app.Application, next http.Handler) http.Handler {
 		func(w http.ResponseWriter, r *http.Request) {
 			next.ServeHTTP(w, r)
 
-			app.Sugar.Infow("Request processed",
+			app.Sugar.Infow(
+
+				"Request processed",
 				"method", r.Method,
 				"path", r.URL.Path,
 				"duration", time.Since(start),
 			)
-		})
+		},
+	)
 }
 
 // SecurityHeadersMiddleware wraps every request with security headers.
@@ -162,8 +165,10 @@ func SecurityHeadersMiddleware(next http.Handler) http.Handler {
 			w.Header().Set("X-Content-Type-Options", "nosniff")
 			w.Header().Set("Referrer-Policy", "strict-origin-when-cross-origin")
 			w.Header().Set("Strict-Transport-Security", "max-age=2678400; includeSubDomains")
-			w.Header().Set("Feature-Policy", "self")
+			w.Header().Set("Permissions-Policy", "geolocation=(), microphone=(), camera=()")
 			w.Header().Set("X-Frame-Options", "DENY")
+			w.Header().Set("Content-Security-Policy", "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://mc.yandex.ru 'unsafe-inline'; style-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; img-src 'self' data: https://autopsy.ep4sh.ru https://jnest.ep4sh.ru; connect-src 'self' https://mc.yandex.ru; frame-ancestors 'none'; base-uri 'self'; form-action 'self'")
 			next.ServeHTTP(w, r)
-		})
+		},
+	)
 }
